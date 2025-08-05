@@ -15,7 +15,7 @@ body {
   font-family: "IBM plex sans", sans-serif;
   margin: 2rem auto;
   padding: 2rem;
-  box-shadow: 0rem 0rem 6rem #6b6b6b;
+  box-shadow: 0rem 0rem 3rem #6b6b6b;
   border-radius: 20px;
   height: 90vh;
   display: flex;
@@ -31,6 +31,7 @@ nav {
   display: flex;
   justify-content: space-between;
   position: sticky;
+  width: 98%;
   top: 0;
   z-index: 1000;
 }
@@ -54,10 +55,76 @@ nav {
   margin: 0;
 }
 
+.top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: baseline;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.search-bar{
+  display: flex;
+  flex: 2.5;
+  justify-content: center;
+  align-items: center;
+}
+
+#search{
+  border: none;
+  background: none;
+  background-color: #202020;
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: 20px;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+#search:focus{
+  color: #c5c5c5;
+  outline: none;
+}
+
+#search:hover{
+  background-color: #272727;
+}
+
+.qa-header{
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #202020;
+  border-radius: 20px 20px 0 0;
+  padding-bottom: 1.2rem;
+}
+
+.qa-header p{
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c5c5c5;
+  margin: 0;
+  padding: 0.5rem 2rem;
+}
+
+.qa-header i{
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c5c5c5;
+  margin: 0;
+  padding: 0.5rem 2rem;
+}
+
 main{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -85,6 +152,36 @@ main{
   transition: transform 0.1s ease-in-out;
   background-color: #1a1a1a;
   padding: 1rem;
+  padding-top: 0.5rem;
+}
+
+.primary-task{
+  background-color: #202020;
+  margin: 0.2rem 0 1rem 0;
+  padding: 0 1rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.primary-task h3{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1.2rem;
+  font-style: italic;
+  color: #dbdbdb;
+}
+
+.bar{
+  font-style: normal;
+}
+
+.primary-task > h3 > a > i {
+  color: rgb(25, 255, 197);
+  cursor: pointer;
 }
 
 .side-card{
