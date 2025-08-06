@@ -73,6 +73,13 @@ nav {
   align-items: center;
 }
 
+.search{
+  position: relative;
+  width: 98%;
+  display: flex;
+  align-items: center;
+}
+
 #search{
   border: none;
   background: none;
@@ -82,6 +89,7 @@ nav {
   border-radius: 20px;
   width: 100%;
   transition: all 0.2s ease-in-out;
+  color: #fff;
 }
 
 #search:focus{
@@ -91,6 +99,27 @@ nav {
 
 #search:hover{
   background-color: #272727;
+}
+
+#category{
+  position: absolute;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: auto;
+  padding: 0.2rem 1rem;
+  height: auto;
+  border-radius: 10px;
+  background-color: #2e2e2e;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+
+#category:focus{
+  outline: none;
 }
 
 .qa-header{
@@ -115,7 +144,7 @@ nav {
 .qa-header i{
   font-size: 1.5rem;
   font-weight: 700;
-  color: #c5c5c5;
+  color: #19ffc5;
   margin: 0;
   padding: 0.5rem 2rem;
 }
@@ -180,7 +209,7 @@ main{
 }
 
 .primary-task > h3 > a > i {
-  color: rgb(25, 255, 197);
+  color: #19ffc5;
   cursor: pointer;
 }
 
