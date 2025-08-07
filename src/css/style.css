@@ -2,6 +2,12 @@ html {
   background-color: rgba(15, 15, 15, 1);
 }
 
+.hidden{
+  opacity: 0;
+  display: none !important;
+  cursor: default;
+}
+
 body {
   max-width: 1700px;
   background: linear-gradient(
@@ -17,7 +23,7 @@ body {
   padding: 2rem;
   box-shadow: 0rem 0rem 3rem #6b6b6b;
   border-radius: 20px;
-  height: 90vh;
+  height: max-content;
   display: flex;
   flex-direction: column;
 }
@@ -101,6 +107,15 @@ nav {
   background-color: #272727;
 }
 
+.search i{
+  position: absolute;
+  left: 76%;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.2rem;
+  color: #19ffc5;
+}
+
 #category{
   position: absolute;
   right: 20px;
@@ -130,7 +145,6 @@ nav {
   align-items: center;
   background-color: #202020;
   border-radius: 20px 20px 0 0;
-  padding-bottom: 1.2rem;
 }
 
 .qa-header p{
@@ -147,6 +161,40 @@ nav {
   color: #19ffc5;
   margin: 0;
   padding: 0.5rem 2rem;
+}
+
+.dictionary{
+  position: fixed;
+  top: 20%;
+  height: max-content;
+  width: 82%;
+  background-color: #202020;
+  z-index: 1001;
+  color: white;
+  margin: 2rem auto;
+  padding: 2rem;
+  padding-top: 0.5rem;
+  box-shadow: 0rem 0rem 0.2rem #6b6b6b;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.word{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.part-of-speech{
+  margin: 0;
+}
+
+.definition{
+  font-weight: 500;
 }
 
 main{
@@ -202,10 +250,6 @@ main{
   gap: 1.2rem;
   font-style: italic;
   color: #dbdbdb;
-}
-
-.bar{
-  font-style: normal;
 }
 
 .primary-task > h3 > a > i {

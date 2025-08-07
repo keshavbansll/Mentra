@@ -1,0 +1,12 @@
+@keyframes expandRight {
+    from{
+        width: 20%;
+    }
+    to{
+        width: 82%;
+    }
+}
+
+.expand-right{
+  animation: expandRight 0.1s linear 0s 1 normal;
+}

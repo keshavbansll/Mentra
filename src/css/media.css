@@ -1,0 +1,41 @@
+@media (max-width: 1200px) {
+    .qa-header p{
+        font-size: 1.1rem;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .search-bar{
+        flex: 5;
+    }
+
+    .qa-header p{
+        display: none;
+    }
+
+    .qa-header{
+        width: fit-content;
+        flex: 0.5;
+    }
+}
+
+@media (max-width: 870px) {
+    .left-column{
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    #category{
+        width: 10px;
+        padding: 0;
+        background-color: transparent;
+        border-radius: 50%;
+    }
+
+    .primary-task{
+        font-size: 0.8rem;
+    }
+}

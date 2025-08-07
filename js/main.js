@@ -18,6 +18,7 @@ day.textContent = getFormattedDay();
 
 const userQuery = document.querySelector("#search");
 const selectedSearchType = document.querySelector("#category");
+const dictBlock = document.querySelector(".dictionary");
 
 userQuery.addEventListener("keydown", function (e) {
   if (e.key == "Enter") {
@@ -56,22 +57,68 @@ function search() {
     window.open(url, "_blank");
   }
 
-  if (platform == "dict") {
+  let word = document.querySelector(".word h1");
+  let pronunciation = document.querySelector(".word h3");
+  let partOfSpeech = document.querySelector(".part-of-speech");
+  let definition = document.querySelector(".definition");
+
+  if (platform == "mentra") {
     url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + query;
 
     axios
       .get(url)
       .then((response) => {
-        console.log(`Word: ${response.data[0].word}`);
-        console.log(`Pronunciation: ${response.data[0].phonetics[0].text}`);
-        console.log(`Adjective: ${response.data[0].meanings[0].partOfSpeech}`);
-        console.log(
-          `Definition: ${response.data[0].meanings[0].definitions[0].definition}`
-        );
-        console.log(response.data);
+        word.innerText = response.data[0].word;
+        pronunciation.innerText = response.data[0].phonetics[0].text;
+        partOfSpeech.innerText = response.data[0].meanings[0].partOfSpeech;
+        definition.innerText =
+          response.data[0].meanings[0].definitions[0].definition;
+        // console.log(response.data);
       })
       .catch((e) => {
-        console.log("Error Fetching Data:", e);
+        word.innerText = e;
+        pronunciation.innerText = "";
+        partOfSpeech.innerText = "";
+        definition.innerText = "";
+        alert(
+          "Could not find requested word in Dictionary. Try searching another word."
+        );
       });
+
+    dictBlock.classList.remove("hidden");
+    dictBlock.classList.add("expand-right");
   }
 }
+
+let dictExpandButton = document.querySelector("#dict-expand-btn");
+
+function updateExpandIconVisibility() {
+  const platform = selectedSearchType.value;
+  if (platform === "mentra") {
+    dictExpandButton.classList.remove("hidden");
+  } else {
+    dictExpandButton.classList.add("hidden");
+  }
+}
+
+updateExpandIconVisibility();
+
+selectedSearchType.addEventListener("change", updateExpandIconVisibility);
+
+dictBlock.classList.add("hidden");
+
+let toggle = false;
+
+function showDictionaryDefintion() {
+  if (!toggle) {
+    dictBlock.classList.remove("hidden");
+    dictBlock.classList.add("expand-right");
+  } else {
+    dictBlock.classList.add("hidden");
+    dictBlock.classList.remove("expand-right");
+  }
+
+  toggle = !toggle;
+}
+
+dictExpandButton.addEventListener("click", showDictionaryDefintion);
