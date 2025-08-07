@@ -8,6 +8,18 @@ html {
   cursor: default;
 }
 
+.overlay{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  height: 100%;
+  width: 100%;
+  background-color: #00000086;
+}
+
 body {
   max-width: 1700px;
   background: linear-gradient(
@@ -21,7 +33,7 @@ body {
   font-family: "IBM plex sans", sans-serif;
   margin: 2rem auto;
   padding: 2rem;
-  box-shadow: 0rem 0rem 3rem #6b6b6b;
+  box-shadow: 0rem 0rem 1rem #6b6b6b;
   border-radius: 20px;
   height: max-content;
   display: flex;
@@ -77,16 +89,28 @@ nav {
   flex: 2.5;
   justify-content: center;
   align-items: center;
+  background-color: #202020;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-bar:hover{
+  background-color: #272727
+}
+
+.search-bar:hover #search{
+  background-color: #272727;
 }
 
 .search{
-  position: relative;
   width: 98%;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
 #search{
+  flex: 1;
   border: none;
   background: none;
   background-color: #202020;
@@ -103,29 +127,21 @@ nav {
   outline: none;
 }
 
-#search:hover{
-  background-color: #272727;
-}
-
 .search i{
-  position: absolute;
-  left: 76%;
+  padding: 0.3rem;
+  font-size: 1.2rem;
   cursor: pointer;
   border-radius: 50%;
   padding: 0.2rem;
   color: #19ffc5;
+  transition: transform 0.1s ease-in-out;
+  z-index: 1002;
 }
 
 #category{
-  position: absolute;
-  right: 20px;
-  width: 20px;
-  height: 20px;
   cursor: pointer;
-  font-size: 1.2rem;
-  width: auto;
-  padding: 0.2rem 1rem;
-  height: auto;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
   border-radius: 10px;
   background-color: #2e2e2e;
   color: #fff;
@@ -165,19 +181,22 @@ nav {
 
 .dictionary{
   position: fixed;
-  top: 20%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: max-content;
-  width: 82%;
+  width: max-content;
   background-color: #202020;
-  z-index: 1001;
+  z-index: 1002;
   color: white;
   margin: 2rem auto;
   padding: 2rem;
   padding-top: 0.5rem;
-  box-shadow: 0rem 0rem 0.2rem #6b6b6b;
+  box-shadow: 0rem 0rem 0.5rem #6b6b6b;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  transform-origin: center center;
 }
 
 .word{
@@ -189,8 +208,21 @@ nav {
   padding: 0;
 }
 
-.part-of-speech{
-  margin: 0;
+.word h1, .word h3, .dictionary h3{
+  font-size: 0.8rem;
+}
+
+.word h1::first-letter{
+  text-transform: uppercase;
+}
+
+.word h1{
+  font-size: 1.2rem;
+}
+
+.word h1, .word h3, .dictionary h3{
+  padding: 0;
+  margin: 0.5rem 0;
 }
 
 .definition{

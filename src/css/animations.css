@@ -1,12 +1,12 @@
-@keyframes expandRight {
-    from{
-        width: 20%;
-    }
-    to{
-        width: 82%;
-    }
+@keyframes scaleUp {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(2);
+  }
 }
 
 .expand-right{
-  animation: expandRight 0.1s linear 0s 1 normal;
+  animation: scaleUp 0.3s ease-out forwards;
 }

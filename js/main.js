@@ -1,5 +1,7 @@
 let date = document.querySelector("#date");
 let day = document.querySelector("#day");
+let darkBackground = document.querySelector(".dark");
+darkBackground.classList.add("hidden");
 
 function getFormattedDate() {
   const today = new Date();
@@ -113,9 +115,13 @@ function showDictionaryDefintion() {
   if (!toggle) {
     dictBlock.classList.remove("hidden");
     dictBlock.classList.add("expand-right");
+    darkBackground.classList.remove("hidden");
+    darkBackground.classList.add("overlay");
   } else {
     dictBlock.classList.add("hidden");
     dictBlock.classList.remove("expand-right");
+    darkBackground.classList.add("hidden");
+    darkBackground.classList.remove("overlay");
   }
 
   toggle = !toggle;

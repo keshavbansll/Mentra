@@ -19,11 +19,44 @@
         width: fit-content;
         flex: 0.5;
     }
+
+    .word h1, .word h3, .dictionary h3{
+        font-size: 0.6rem;
+        margin: 0.3rem 0;
+    }
+
+    .word h1{
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 870px) {
     .left-column{
         display: none;
+    }
+}
+
+@media (max-width: 750px){
+
+    .dictionary{
+        padding: 1rem;
+    }
+
+    .word h1, .word h3, .dictionary h3{
+        font-size: 0.6rem;
+        margin: 0.2rem 0;
+    }
+
+    .word h1{
+        font-size: 0.8rem;
+    }
+
+    #date{
+        font-size: 2rem;
+    }
+
+    #day{
+        font-size: 1rem;
     }
 }
 
@@ -37,5 +70,59 @@
 
     .primary-task{
         font-size: 0.8rem;
+    }
+
+    .dictionary{
+        padding: 0.6rem;
+        border-radius: 10PX;
+    }
+
+    .word h1, .word h3, .dictionary h3{
+        font-size: 0.4rem;
+        margin: 0.2rem 0;
+    }
+
+    .word h1{
+        font-size: 0.6rem;
+    }
+
+    .word{
+        gap: 0.5rem;
+    }
+
+    #date{
+        font-size: 1.5rem;
+    }
+
+    #day{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .dictionary{
+        padding: 0.6rem;
+        border-radius: 10PX;
+    }
+
+    .word h1, .word h3, .dictionary h3{
+        font-size: 0.32rem;
+        margin: 0.2rem 0;
+    }
+
+    .word h1{
+        font-size: 0.6rem;
+    }
+
+    #date{
+        font-size: 1rem;
+    }
+
+    #day{
+        font-size: 0.6rem;
+    }
+
+    .nav-right img {
+        height: 20px;
     }
 }
