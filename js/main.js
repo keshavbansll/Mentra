@@ -128,3 +128,16 @@ function showDictionaryDefintion() {
 }
 
 dictExpandButton.addEventListener("click", showDictionaryDefintion);
+
+function updateClock() {
+  const now = new Date();
+  const timeString = now.toLocaleTimeString("en-uk", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+  document.querySelector("#clock").textContent = timeString;
+}
+
+updateClock();
+setInterval(updateClock, 1000);

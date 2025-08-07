@@ -245,6 +245,31 @@ main{
   gap: 1rem;
 }
 
+.side-card{
+  height: max-content;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.clock{
+  background-color: transparent;
+}
+
+#clock{
+  justify-self: center;
+  margin: 0;
+  padding: 1rem 2rem;
+  background-color: #0f0f0f;
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 2rem;
+  box-shadow: 4px 4px 15px #101010, -4px -4px 15px #2a2a2a;
+  transition: all 0.3s ease-in-out;
+
+}
+
 .right-column{
   flex: 2;
   display: flex;
@@ -287,12 +312,4 @@ main{
 .primary-task > h3 > a > i {
   color: #19ffc5;
   cursor: pointer;
-}
-
-.side-card{
-  height: 100px;
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  box-shadow: 0rem 0rem 0.5rem #2e2e2e;
-  padding: 1rem;
 }
