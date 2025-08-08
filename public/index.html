@@ -33,7 +33,7 @@
     <section class="top">
       <div class="search-bar">
         <div class="search">
-          <input type="text" placeholder="Search" id="search" />
+          <input type="text" placeholder="Search   ⁐" id="search" />
           <i class="fa-solid fa-expand" id="dict-expand-btn"></i>
           <select
             name="cat"
@@ -66,9 +66,24 @@
 
     <main>
       <div class="left-column">
-        <div class="side-card">Module 1</div>
+        <div class="side-card quoteBlock">
+          <h2 class="quote text">
+            <span class="quote-text"
+              >There are no great limits to growth because there are no limits
+              of human intelligence, imagination, and wonder. Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Nemo expedita, voluptatibus
+              quidem aperiam, accusantium vitae at deserunt ipsam aliquid
+              labore, qui doloribus rerum suscipit ducimus. Nostrum deserunt ea
+              molestias vitae.</span
+            ><br />
+            <button class="quote change">
+              <i class="fa-solid fa-forward"></i>
+            </button>
+          </h2>
+        </div>
         <div class="side-card clock">
           <div id="clock"></div>
+          <div class="time-zone"><span style="color: #19ffc5">T</span></div>
         </div>
       </div>
       <div class="right-column">
@@ -92,7 +107,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.8/dist/axios.min.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

@@ -89,6 +89,10 @@ function search() {
 
     dictBlock.classList.remove("hidden");
     dictBlock.classList.add("expand-right");
+    darkBackground.classList.remove("hidden");
+    darkBackground.classList.add("overlay");
+
+    toggle = true;
   }
 }
 
@@ -141,3 +145,27 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+// let quoteText = document.querySelector(".quote-text");
+
+// function dailyQuote() {
+//   url = "https://api.api-ninjas.com/v1/quotes";
+
+//   axios
+//     .get(url, {
+//       headers: { "X-Api-Key": "atITxGd9o3C92eKZlLoDAg==pN8vWgzYhjU5vTM7" },
+//     })
+//     .then((response) => {
+//       quoteText.innerHTML = response.data[0].quote;
+//       console.log(response.data[0]);
+//     })
+//     .catch((e) => {
+//       console.log(`Error fetching quote ${e}`);
+//     });
+// }
+
+// dailyQuote();
+
+// let nextQuoteBtn = document.querySelector(".change");
+
+// nextQuoteBtn.addEventListener("click", dailyQuote);
