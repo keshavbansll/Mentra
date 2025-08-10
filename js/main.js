@@ -171,10 +171,12 @@ setInterval(updateClock, 1000);
 // nextQuoteBtn.addEventListener("click", dailyQuote);
 
 let addStreakBtn = document.querySelector(".add-date");
-let sat = document.querySelector(".sat");
 
 addStreakBtn.addEventListener("click", () => {
-  sat.innerHTML = '<i class="fa-solid fa-check check"></i>';
+  const todayElement = document.querySelector(".days .today");
+  if (todayElement) {
+    todayElement.innerHTML = '<i class="fa-solid fa-check check"></i>';
+  }
 });
 
 let addTaskIcon = document.querySelector(".icons i");
@@ -289,3 +291,28 @@ todoSearch.addEventListener("keydown", (e) => {
 });
 
 updateTaskInfoVisibilty();
+
+function updateCalendarDates() {
+  const today = new Date();
+  const currentDayIndex = today.getDay();
+
+  const daysList = document.querySelectorAll(".days li");
+
+  for (let i = 0; i < daysList.length; i++) {
+    let dateObj = new Date(today);
+    dateObj.setDate(today.getDate() - currentDayIndex + i);
+    daysList[i].textContent = dateObj.getDate();
+    daysList[i].classList.remove("today");
+  }
+
+  daysList[currentDayIndex].classList.add("today");
+}
+
+updateCalendarDates();
+
+setInterval(() => {
+  const now = new Date();
+  if (now.getHours() === 0 && now.getMinutes() === 0) {
+    updateCalendarDates();
+  }
+}, 60000);

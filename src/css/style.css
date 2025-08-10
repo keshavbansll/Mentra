@@ -75,6 +75,28 @@ nav {
   border-radius: 20px;
 }
 
+.nav-left{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.theme{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 0.7rem;
+}
+
+.theme i{
+  font-size: 1.7rem;
+  color: orange;
+}
+
 .nav-right {
   display: flex;
   cursor: pointer;
