@@ -65,17 +65,10 @@
     </section>
 
     <main>
-      <div class="left-column">
+      <section class="left-column">
         <div class="side-card quoteBlock">
           <h2 class="quote text">
-            <span class="quote-text"
-              >There are no great limits to growth because there are no limits
-              of human intelligence, imagination, and wonder. Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Nemo expedita, voluptatibus
-              quidem aperiam, accusantium vitae at deserunt ipsam aliquid
-              labore, qui doloribus rerum suscipit ducimus. Nostrum deserunt ea
-              molestias vitae.</span
-            ><br />
+            <span class="quote-text">Loading...</span><br />
             <button class="quote change">
               <i class="fa-solid fa-forward"></i>
             </button>
@@ -85,9 +78,41 @@
           <div id="clock"></div>
           <div class="time-zone"><span style="color: #19ffc5">T</span></div>
         </div>
-      </div>
+        <div class="side-card graph">
+          <div id="graph">
+            <div class="calendar">
+              <ul class="week">
+                <li>M</li>
+                <li>T</li>
+                <li>W</li>
+                <li>T</li>
+                <li>F</li>
+                <li>S</li>
+                <li>S</li>
+              </ul>
+              <ul class="days">
+                <li class="mon">4</li>
+                <li class="tue">5</li>
+                <li class="wed">6</li>
+                <li class="thu">7</li>
+                <li class="fri">8</li>
+                <li class="sat">9</li>
+                <li class="sun">10</li>
+              </ul>
+              </div>
+              <div class="status">
+                You are on Fire 🔥
+                <button class="add-date">
+                  <i class="fa-solid fa-plus"></i>Focus
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="right-column">
         <div class="main">
+
           <div class="primary-task">
             <div class="bar">|</div>
             <h3>
@@ -95,7 +120,32 @@
               <a href="#"><i class="fa-solid fa-bars-staggered"></i></a>
             </h3>
           </div>
-          <hr />
+
+          <div class="task-block">
+
+            <div class="todo-title">
+              <h2>🎯 Check-in at your tasks:
+                <div class="icons">
+                  <input type="text" placeholder="Add Task" class="todo-search hidden">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </h2>
+            </div>
+            <hr>
+            <div class="task-info">
+              <h3>You do not have any added tasks yet!</h3>
+              <div class="progress-bar hidden">
+                <progress id="task-progress" value="0" max="0"></progress>
+                <span id="progress-text">0 / 0 completed</span>
+              </div>
+            </div>
+            <div class="todo-main">
+              <div class="todo-tasks">
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </main>

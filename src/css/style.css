@@ -8,6 +8,23 @@ html {
   cursor: default;
 }
 
+.check{
+  align-self: center;
+  width: max-content;
+  height: auto;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  padding: 0.5rem;
+  background-color: #19ffc5;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px #0d4540, -0px -0px 5px #0a6363;
+  transition: all 0.3s ease-in-out;
+}
+
 .overlay{
   margin: 0;
   padding: 0;
@@ -31,7 +48,7 @@ body {
   box-sizing: border-box;
   color: white;
   font-family: "IBM plex sans", sans-serif;
-  margin: 2rem auto;
+  margin: 4rem auto;
   padding: 2rem;
   box-shadow: 0rem 0rem 1rem #6b6b6b;
   border-radius: 20px;
@@ -52,7 +69,7 @@ nav {
   position: sticky;
   width: flex-end;
   top: 0;
-  z-index: 1000;
+  z-index: 2000;
   background-color: #101010;
   padding: 1rem 1rem;
   border-radius: 20px;
@@ -93,7 +110,7 @@ nav {
   flex: 2.5;
   justify-content: center;
   align-items: center;
-  background-color: #202020;
+  background-color: #1a1a1a;
   border-radius: 20px;
   transition: all 0.2s ease-in-out;
 }
@@ -117,7 +134,7 @@ nav {
   flex: 1;
   border: none;
   background: none;
-  background-color: #202020;
+  background-color: #1a1a1a;
   font-size: 1.5rem;
   padding: 0.5rem 2rem 0.5rem 2rem;
   border-radius: 20px;
@@ -191,13 +208,13 @@ nav {
   height: max-content;
   width: max-content;
   max-width: 550px;
-  background-color: #202020;
+  background-color: #0f0f0f;
   z-index: 1002;
   color: white;
   margin: 2rem auto;
   padding: 2rem;
   padding-top: 0.5rem;
-  box-shadow: 0rem 0rem 0.5rem #6b6b6b;
+  box-shadow: 0rem 0rem 0.5rem #2a2a2a;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -253,10 +270,51 @@ main{
 
 .side-card{
   height: max-content;
-  width: fit-content;
+  width: 100%;
   background-color: #1a1a1a;
   border-radius: 10px;
   padding: 0 0 1rem 0rem;
+}
+
+.quote{
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  margin: 0;
+  padding: 1rem 2rem;
+  background-color: #0f0f0f;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 2rem;
+  box-shadow: 4px 4px 15px #101010, -4px -4px 15px #2a2a2a;
+  transition: all 0.3s ease-in-out;
+  gap: 0rem;
+}
+
+.quote-text{
+  text-align: justify;
+}
+
+.quoteBlock{
+  background-color: transparent;
+  width: 100%;
+}
+
+.change{
+  align-self: end;
+  width: max-content;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  padding: 0.5rem 1rem;
+  background-color: #19ffc5;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 5px #0d4540, -0px -0px 5px #0a6363;
+  transition: all 0.3s ease-in-out;
 }
 
 .clock{
@@ -281,8 +339,8 @@ main{
 }
 
 .clock .time-zone{
-  margin: 0;
-  padding: 0;
+  margin: 0 1rem 0 0;
+  padding: 0 0 0 0;
   background-color: #19ffc5;
   font-size: 1rem;
   width: max-content;
@@ -293,33 +351,64 @@ main{
   transition: all 0.3s ease-in-out;
 }
 
-.quoteBlock{
+.graph{
   background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-self: center;
 }
 
-.quote{
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  height: max-content;
+#graph{
   margin: 0;
   padding: 1rem 2rem;
   background-color: #0f0f0f;
-  font-size: 1.2rem;
+  width: 100%;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 2px;
   border-radius: 2rem;
   box-shadow: 4px 4px 15px #101010, -4px -4px 15px #2a2a2a;
   transition: all 0.3s ease-in-out;
-  gap: 0rem;
+  height: max-content;
 }
 
-.quote-text{
-  text-align: justify;
+.week{
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
 }
 
-.change{
-  align-self: end;
+.days{
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.week li, .days li{
+  text-align: center;
+  width: 40px;
+}
+
+.status{
+  display: flex;
+  font-size: 1.5rem;
+  justify-self: center;
+  justify-content: space-between;
+  margin: 3rem 0 0 0;
+  background-color: #0f0f0f;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 15px #101010, -4px -4px 15px #2a2a2a;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-date{
+  align-self: center;
   width: max-content;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
@@ -327,7 +416,7 @@ main{
   background-color: #19ffc5;
   color: #000;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 2px;
   border-radius: 2rem;
   box-shadow: 0px 0px 5px #0d4540, -0px -0px 5px #0a6363;
@@ -344,7 +433,8 @@ main{
 .main{
   width: 100%;
   max-width: 1000px;
-  height: 35rem;
+  min-height: 35rem;
+  height: max-content;
   box-shadow: 0rem 0rem 1rem #2e2e2e;
   border-radius: 20px;
   transition: transform 0.1s ease-in-out;
@@ -354,7 +444,7 @@ main{
 }
 
 .primary-task{
-  background-color: #202020;
+  background-color: #0f0f0f;
   margin: 0.2rem 0 1rem 0;
   padding: 0 1rem;
   border-radius: 15px;
@@ -376,4 +466,124 @@ main{
 .primary-task > h3 > a > i {
   color: #19ffc5;
   cursor: pointer;
+}
+
+.task-block{
+  background-color: #0f0f0f;
+  max-width: 100%;
+  height: max-content;
+  padding: 0.2rem 1.5rem;
+  border-radius: 20px;
+}
+
+.todo-title h2{
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+}
+
+.icons{
+  display: flex;
+  padding: 0;
+  width: 50%;
+  justify-content: end;
+}
+
+.icons i{
+  color: #19ffc5;
+  font-size: 2rem;
+}
+
+.icons .fa-plus{
+  padding: 0.5rem;
+  width: 18px;
+  height: 18px;
+  background-color: #19ffc5;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 900;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out; 
+}
+
+.task-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-info h3{
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1rem;
+  color: #6b6b6b;
+}
+
+.todo-search{
+  width: max-content;
+  border: none;
+  background: none;
+  background-color: #202020;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px 0px 0px 20px;
+  transition: all 0.2s ease-in-out;
+  color: #fff;
+  width: 0%;
+  justify-self: right;
+}
+
+.todo-search:focus{
+  outline: none;
+}
+
+.task-wrapper input{
+  display: none;
+}
+
+.todo-tasks{
+  width: 100%;
+  padding: 0 2rem 0 2rem;
+  margin: 0;
+}
+
+.task-wrapper{
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 2rem;
+}
+
+.task-wrapper p{
+  margin: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.task-wrapper .checkmark{
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 3px solid #202020;
+  transition: all 0.1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent  ;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.task-wrapper input:checked + .checkmark {
+  background-color: #19ffc5;
+  color: #000;
+}
+
+.task-wrapper input:checked ~ p{
+  text-decoration: line-through;
+  color: #6b6b6b;
 }

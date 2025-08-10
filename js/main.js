@@ -88,7 +88,7 @@ function search() {
       });
 
     dictBlock.classList.remove("hidden");
-    dictBlock.classList.add("expand-right");
+    dictBlock.classList.add("scaleUp");
     darkBackground.classList.remove("hidden");
     darkBackground.classList.add("overlay");
 
@@ -118,12 +118,12 @@ let toggle = false;
 function showDictionaryDefintion() {
   if (!toggle) {
     dictBlock.classList.remove("hidden");
-    dictBlock.classList.add("expand-right");
+    dictBlock.classList.add("scaleUp");
     darkBackground.classList.remove("hidden");
     darkBackground.classList.add("overlay");
   } else {
     dictBlock.classList.add("hidden");
-    dictBlock.classList.remove("expand-right");
+    dictBlock.classList.remove("scaleUp");
     darkBackground.classList.add("hidden");
     darkBackground.classList.remove("overlay");
   }
@@ -156,7 +156,7 @@ setInterval(updateClock, 1000);
 //       headers: { "X-Api-Key": "atITxGd9o3C92eKZlLoDAg==pN8vWgzYhjU5vTM7" },
 //     })
 //     .then((response) => {
-//       quoteText.innerHTML = response.data[0].quote;
+//       quoteText.innerHTML = "🎯" + response.data[0].quote;
 //       console.log(response.data[0]);
 //     })
 //     .catch((e) => {
@@ -169,3 +169,123 @@ setInterval(updateClock, 1000);
 // let nextQuoteBtn = document.querySelector(".change");
 
 // nextQuoteBtn.addEventListener("click", dailyQuote);
+
+let addStreakBtn = document.querySelector(".add-date");
+let sat = document.querySelector(".sat");
+
+addStreakBtn.addEventListener("click", () => {
+  sat.innerHTML = '<i class="fa-solid fa-check check"></i>';
+});
+
+let addTaskIcon = document.querySelector(".icons i");
+let addTaskInput = document.querySelector(".todo-search");
+
+let taskToggle = false;
+
+addTaskIcon.addEventListener("click", () => {
+  if (!taskToggle) {
+    addTaskInput.classList.remove("hidden");
+    addTaskInput.classList.add("slideLeft");
+    addTaskInput.classList.remove("slideRight");
+  } else {
+    addTaskInput.classList.add("slideRight");
+    addTaskInput.classList.remove("slideLeft");
+    setTimeout(() => {
+      addTaskInput.classList.add("hidden");
+    }, 500);
+  }
+
+  taskToggle = !taskToggle;
+});
+
+let todoSearch = document.querySelector(".todo-search");
+let tasks = document.querySelector(".todo-tasks");
+
+let taskInfo = document.querySelector(".task-info h3");
+
+function updateTaskInfoVisibilty() {
+  let progressBar = document.querySelector(".progress-bar");
+
+  if (tasks.children.length > 0) {
+    taskInfo.textContent = "Progress";
+    progressBar.classList.remove("hidden");
+  } else {
+    taskInfo.textContent = "You do not have any added tasks yet!";
+    progressBar.classList.add("hidden");
+  }
+}
+
+let progressBar = document.querySelector("#task-progress");
+let progressText = document.querySelector("#progress-text");
+progressBar.setAttribute("data-completed", 0);
+
+let totalTasks = 0;
+let completedTasks = 0;
+
+function updateProgress() {
+  if (totalTasks > 0 && completedTasks === totalTasks) {
+    totalTasks = 0;
+    completedTasks = 0;
+  }
+  progressBar.max = totalTasks;
+  progressBar.value = completedTasks;
+
+  let progress =
+    totalTasks > 0 ? Math.floor((completedTasks / totalTasks) * 100) : 0;
+
+  progressText.textContent = `${progress}%`;
+}
+
+function addTask() {
+  if (!todoSearch.value.trim()) return;
+
+  totalTasks++;
+
+  let newTask = document.createElement("label");
+
+  newTask.classList.add("task-wrapper");
+  tasks.appendChild(newTask);
+
+  let newCheck = document.createElement("input");
+
+  newCheck.type = "checkbox";
+  newTask.appendChild(newCheck);
+
+  let newMark = document.createElement("div");
+  let newIcon = document.createElement("i");
+
+  newMark.classList.add("checkmark");
+  newIcon.classList.add("fa-solid");
+  newIcon.classList.add("fa-check");
+  newMark.appendChild(newIcon);
+  newTask.appendChild(newMark);
+
+  let newTaskTitle = document.createElement("p");
+  newTaskTitle.innerText = todoSearch.value;
+  newTask.append(newTaskTitle);
+
+  newCheck.addEventListener("change", () => {
+    if (newCheck.checked) {
+      setTimeout(() => {
+        newTask.remove();
+        completedTasks++;
+        updateProgress();
+        updateTaskInfoVisibilty();
+      }, 700);
+    }
+  });
+
+  todoSearch.value = "";
+
+  updateTaskInfoVisibilty();
+  updateProgress();
+}
+
+todoSearch.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    addTask();
+  }
+});
+
+updateTaskInfoVisibilty();
