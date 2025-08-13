@@ -2,6 +2,10 @@
     .time-zone{
         display: none;
     }
+
+    .add-date{
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -16,6 +20,21 @@
 
     .dictionary{
         max-width: 400px;
+    }
+
+    .status{
+        font-size: 1rem;
+    }
+
+    .add-date{
+        padding: 0.5rem;
+        font-size: 0.6rem;
+    }
+
+    .icons input{
+        height: max-content;
+        align-self: center;
+        align-items: center;
     }
 }
 
@@ -45,17 +64,20 @@
 
     #clock{
         font-size: 3rem;
+        width: 100%;
+        text-align: center;
     }
 
     .dictionary{
         max-width: 300px;
     }
+
+    .todo-title h2{
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 870px) {
-    .left-column{
-        display: none;
-    }
 
     .dictionary{
         max-width: 250px;
