@@ -148,36 +148,36 @@ setInterval(updateClock, 1000);
 
 let quoteText = document.querySelector(".quote-text");
 
-// function dailyQuote() {
-//   url = "https://api.api-ninjas.com/v1/quotes";
+function dailyQuote() {
+  url = "https://api.api-ninjas.com/v1/quotes";
 
-//   axios
-//     .get(url, {
-//       headers: { "X-Api-Key": "atITxGd9o3C92eKZlLoDAg==pN8vWgzYhjU5vTM7" },
-//     })
-//     .then((response) => {
-//       quoteText.innerHTML = "🎯" + response.data[0].quote;
-//       console.log(response.data[0]);
-//     })
-//     .catch((e) => {
-//       console.log(`Error fetching quote ${e}`);
-//     });
-// }
+  axios
+    .get(url, {
+      headers: { "X-Api-Key": "atITxGd9o3C92eKZlLoDAg==pN8vWgzYhjU5vTM7" },
+    })
+    .then((response) => {
+      quoteText.innerHTML = "🎯" + response.data[0].quote;
+      console.log(response.data[0]);
+    })
+    .catch((e) => {
+      console.log(`Error fetching quote ${e}`);
+    });
+}
 
-// dailyQuote();
+dailyQuote();
 
-// let nextQuoteBtn = document.querySelector(".change");
+let nextQuoteBtn = document.querySelector(".change");
 
-// nextQuoteBtn.addEventListener("click", dailyQuote);
+nextQuoteBtn.addEventListener("click", dailyQuote);
 
-// let addStreakBtn = document.querySelector(".add-date");
+let addStreakBtn = document.querySelector(".add-date");
 
-// addStreakBtn.addEventListener("click", () => {
-//   const todayElement = document.querySelector(".days .today");
-//   if (todayElement) {
-//     todayElement.innerHTML = '<i class="fa-solid fa-check check"></i>';
-//   }
-// });
+addStreakBtn.addEventListener("click", () => {
+  const todayElement = document.querySelector(".days .today");
+  if (todayElement) {
+    todayElement.innerHTML = '<i class="fa-solid fa-check check"></i>';
+  }
+});
 
 let addTaskIcon = document.querySelector(".icons i");
 let addTaskInput = document.querySelector(".todo-search");
