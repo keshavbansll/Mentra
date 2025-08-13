@@ -23,7 +23,15 @@ const selectedSearchType = document.querySelector("#category");
 const dictBlock = document.querySelector(".dictionary");
 
 userQuery.addEventListener("keydown", function (e) {
-  if (e.key == "Enter") {
+  const key = e.key ? e.key.toLowerCase() : "";
+  if (
+    key === "enter" ||
+    key === "go" ||
+    key === "search" ||
+    key === "done" ||
+    e.keyCode === 13
+  ) {
+    e.preventDefault();
     search();
   }
 });
