@@ -178,6 +178,10 @@
     .todo-title h2{
         font-size: 1rem;
     }
+
+    #search{
+        padding: 0.5rem 1rem 0.5rem 1rem;
+    }
 }
 
 @media (max-width: 500px) {
@@ -217,6 +221,11 @@
 
     .dictionary{
         max-width: 150px;
+    }
+
+    .quote{
+        font-size: 1rem;
+        padding: 1rem;
     }
 }
 
