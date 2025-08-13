@@ -316,3 +316,24 @@ setInterval(() => {
     updateCalendarDates();
   }
 }, 60000);
+
+let themeChangeBtn = document.querySelector(".theme");
+let themeIcon = document.querySelector(".theme i");
+
+let themeToggle = false;
+
+themeChangeBtn.addEventListener("click", () => {
+  if (!themeToggle) {
+    themeChangeBtn.style.backgroundColor = "white";
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+    themeIcon.style.color = "rgb(48, 0, 48)";
+  } else {
+    themeChangeBtn.style.backgroundColor = "black";
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+    themeIcon.style.color = "orange";
+  }
+
+  themeToggle = !themeToggle;
+});

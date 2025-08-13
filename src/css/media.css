@@ -75,6 +75,12 @@
     .todo-title h2{
         font-size: 1.2rem;
     }
+
+    .theme{
+        height: 25px;
+        width: 25px;
+        padding: 0.6rem;
+    }
 }
 
 @media (max-width: 870px) {
@@ -147,6 +153,29 @@
     }
 
     #day{
+        font-size: 1rem;
+    }
+
+    .theme{
+        height: 15px;
+        width: 15px;
+        padding: 0.5rem;
+    }
+
+    .theme i{
+        font-size: 1.2rem;
+    }
+
+    .task-wrapper .checkmark{
+        height: 15px;
+        width: 15px;
+    }
+
+    .task-wrapper{
+        font-size: 1rem;
+    }
+
+    .todo-title h2{
         font-size: 1rem;
     }
 }
